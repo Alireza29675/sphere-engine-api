@@ -92,7 +92,7 @@ module.exports = class Sphere {
                     const resultObj = {};
                     this.request('get', `submissions/${order.id}`).then(response => {
                         // extracting main data
-                        resultObj.id = response.result.id;
+                        resultObj.id = response.id;
                         resultObj.compiler = `${response.compiler.name} (${response.compiler.version.name})`;
                         resultObj.time = response.result.time;
                         resultObj.memory = response.result.memory;
