@@ -8,11 +8,15 @@ $ npm i --save sphere-engine
 
 ## Usage
 ```javascript
-const sphere = require('sphere-engine')
+const Sphere = require('sphere-engine')
+
+const sphere = new Sphere({
+    token: '<TOKEK_API>'
+})
 
 sphere.compile({
     language: 'c++',
-    code: ''
+    source: '#include <stdio.h>\n int main(){ // some code }'
 }).then(result => {
     console.log(result);
 });
