@@ -1,4 +1,4 @@
-# sphere-engine-api
+# Sphere Engine Node API
 Sphere Engine API npm package
 
 ## Installation
