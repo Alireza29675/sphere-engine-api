@@ -111,7 +111,7 @@ module.exports = class Sphere {
                                     if (extractedCount === Object.keys(response.result.streams).length) {
                                         resolve(resultObj);
                                     }
-                                })
+                                }).catch(console.log)
                             }
                         }
                     })

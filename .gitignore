@@ -21,3 +21,5 @@ lib
 .npm
 
 .DS_Store
+
+temp.test.js

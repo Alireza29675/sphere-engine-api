@@ -8,18 +8,48 @@ $ npm i --save sphere-engine
 
 ## Usage
 ```javascript
-const Sphere = require('sphere-engine')
+const Sphere = require('./lib')
 
 const sphere = new Sphere({
-    token: '<TOKEK_API>'
+    endpoint: '<HASH>.compilers.sphere-engine.com',
+    token: '<COMPILER_API_TOKEN>'
+});
+
+const code = `
+#include <iostream>
+using namespace std;
+int main () {    
+    cout << "Hello Sphere";
+    return 0;
+}
+`
+
+sphere.ready(() => {
+
+    sphere.compile({
+        language: 'c++',
+        source: code
+    }, 1000).then(response => {
+
+        console.log(response)
+        // Console logs
+        // {
+        //    id: 67918206,
+        //    compiler: 'C++ (5.1.1)',
+        //    time: 0,
+        //    memory: 15224,
+        //    source: '\n#include <iostream>\nusing namespace std;\nint main () {\n\tcout<<"Hello World";\n\treturn 0;\n}\n',
+        //    input: null,
+        //    error: null,
+        //    cmpinfo: null,
+        //    output: 'Hello World'
+        // }
+
+    })
+
 })
 
-sphere.compile({
-    language: 'c++',
-    source: '#include <stdio.h>\n int main(){ // some code }'
-}).then(result => {
-    console.log(result);
-});
+module.exports = Sphere;
 ```
 
 ## Scripts
