@@ -8,7 +8,7 @@ $ npm i --save sphere-engine
 
 ## Usage
 ```javascript
-const Sphere = require('./lib')
+const Sphere = require('sphere-engine')
 
 const sphere = new Sphere({
     endpoint: '<HASH>.compilers.sphere-engine.com',
